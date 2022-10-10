@@ -1,12 +1,11 @@
-from wsgiref.validate import validator
-
-
 print(int(1.65462))
 print(int("10"))
 print(float("10.10"))
 print(float(100))
 
 valor = 10
+valor_str = 100
+
 valor_str = str(valor)
 print(type(valor))
 print(type(valor_str))

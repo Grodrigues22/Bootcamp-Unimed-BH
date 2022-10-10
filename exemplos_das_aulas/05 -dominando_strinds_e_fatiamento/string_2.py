@@ -24,3 +24,5 @@ print("Nome: {nome} Idade: {idade}".format(**dados))
 print(f"Nome: {nome} Idade: {idade}")
 print(f"Nome: {nome} Idade: {idade} saldo: {saldo:.2f}")
 print(f"Nome: {nome} Idade: {idade} saldo: {saldo:10.2f}")
+
+print(f"saldo:{saldo:.2f}")
