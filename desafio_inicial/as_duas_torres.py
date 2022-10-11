@@ -43,7 +43,6 @@ Diametro2 = 8
 
 Saida = (Distancia/(Diametro1 + Diametro2))
 
-
 print(f"{Saida:.2f}")
 
 
