@@ -17,8 +17,9 @@
 ##########################      Saída       ##########################  
 # Seu programa deve produzir uma única linha com um número racional representando o número médio de cachorros-quentes consumidos pelos participantes. O resultado deve ser escrito como um número racional com exatamente dois dígitos após o ponto decimal, arredondado se necessário.
 
-cachorro_quentes_consumidos = 840
-participantes = 11
+
+cachorro_quentes_consumidos = int(valores[0])
+participantes = int(valores[1])
 media = (cachorro_quentes_consumidos / participantes)
 
 print(f"{media:.2f}")
