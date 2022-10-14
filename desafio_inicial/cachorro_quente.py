@@ -16,6 +16,7 @@
 
 ##########################      Saída       ##########################  
 # Seu programa deve produzir uma única linha com um número racional representando o número médio de cachorros-quentes consumidos pelos participantes. O resultado deve ser escrito como um número racional com exatamente dois dígitos após o ponto decimal, arredondado se necessário.
+# Vale lembrar que na atividade precisamos colocar apenas uma saida generica.
 
 
 cachorro_quentes_consumidos = int(valores[0])
