@@ -37,9 +37,9 @@
 #   Diametro_do_paladir_de_sauron = X
 #   Diametro_do_paladir_de_saruman = Y
 
-Distancia = 200
-Diametro1 = 3
-Diametro2 = 8
+Distancia = int(valores[1])
+Diametro1 = int(valores[2])
+Diametro2 = int(valores[3])
 
 Saida = (Distancia/(Diametro1 + Diametro2))
 

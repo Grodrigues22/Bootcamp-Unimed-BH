@@ -27,20 +27,22 @@
 ###########################     Saída       ###########################
 # Imprima a quantidade de litros necessária para realizar a viagem, com três dígitos após o ponto decimal
 
+
+valores = input("Informe tempo e a velocidade media em KMH: ").split(' ')
+
+Tempo = int(valores[0])
+KMH = int(valores[1])
 KML = 12
-Tempo = 10
-KMH = 85
 
 Distancia = (Tempo * KMH)
 Litros_necessatios = (Distancia / KML)
 
 print(f"{Litros_necessatios:.3f}")
 
-KML = 12
-Tempo = 22
-KMH = 67
 
-Distancia = (Tempo * KMH)
-Litros_necessatios = (Distancia / KML)
+###########################     FORMA MAIS ADEQUADA DA ATIVIDADE       ###########################
 
-print(f"{Litros_necessatios:.3f}")
+tempo, velocidade = map(int,input().split())
+quantidade_litros = (tempo * velocidade) / 12
+
+print(f"{quantidade_litros:.3f}")
