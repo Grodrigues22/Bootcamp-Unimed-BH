@@ -22,3 +22,6 @@ for letra in alfabeto:
     if letra == Letra:
         saida = alfabeto.index(Letra)+1
         print(saida)
+
+
+
