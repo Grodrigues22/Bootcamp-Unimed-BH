@@ -1,11 +1,24 @@
-# linguagens = ("python", "js", "c", "java", "csharp",)
+###         MODELO INICIAL      ###
 
-# linguagens.index("java") # 3
-# linguagens.index("python") # 0
+# alfabeto = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+# Letra = str(input("Escreva uma letra do alfabeto para saber a posição: "))
 
-letras = ord()
+# for letra in alfabeto:
+#     if letra == Letra:
+#         saida = alfabeto.index(Letra)+1
+#         print(saida)
 
-Letra = letras.input("Informe a letra que gostaria de saber: ")
+###         FORMA CORRETA SEGUNDO A DIO      ###
 
-letras.index(Letra[0])
-print(Letra)
+# letra = input() 
+# print(ord(letra)-64)
+
+
+import string
+alfabeto = list(string.ascii_lowercase)
+Letra = str(input("Escreva uma letra do alfabeto para saber a posição: "))
+
+for letra in alfabeto:
+    if letra == Letra:
+        saida = alfabeto.index(Letra)+1
+        print(saida)
