@@ -4,10 +4,10 @@
 
 #### Narrativa - Alunos:
 
-    * A universidade possui diversos alunos que podem estar matriculados em mais de um curso (graduação).
-    * Os alunos podem fazer cursos extras fornecidos externa e internamente (universidade) para contar como horas complementares
-    * Não há restrição quanto ao número de matérias puxadas se não houver sobreposição de horário.
-    * Os alunos são submetidos a duas provas por semestre para cada disciplina. Eventuais trabalhos devem ser tratados pelo professor para compor a nota da prova.
+- A universidade possui diversos alunos que podem estar matriculados em mais de um curso (graduação).
+- Os alunos podem fazer cursos extras fornecidos externa e internamente (universidade) para contar como horas complementares
+- Não há restrição quanto ao número de matérias puxadas se não houver sobreposição de horário.
+- Os alunos são submetidos a duas provas por semestre para cada disciplina. Eventuais trabalhos devem ser tratados pelo professor para compor a nota da prova.
 
 #### Narrativa - Disciplinas:
 
@@ -18,4 +18,4 @@
 
 #### Narrativa - Professores:
 
-    * Os professores que ministram as disciplinas estão associados as coordenações de seus respectivos cursos. Ex: Computação, Física, Engenharia.
+- Os professores que ministram as disciplinas estão associados as coordenações de seus respectivos cursos. Ex: Computação, Física, Engenharia.
