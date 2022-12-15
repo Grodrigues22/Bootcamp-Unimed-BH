@@ -30,3 +30,6 @@
 - Cliente PJ e PF – Uma conta pode ser PJ ou PF, mas não pode ter as duas informações
 - Pagamento – Pode ter cadastrado mais de uma forma de pagamento
 - Entrega – Possui status e código de rastreio
+
+#### OBS.:
+- Infelizmente eu não consegui realizar o desafio sem visualizar exemplo do tutor, a minha primeira ideia do desafio ficou bem errônea e percebo que ainda preciso estudar mais sobre o assunto, mas o aprendizado foi de bom grado. 
