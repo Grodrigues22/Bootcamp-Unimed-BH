@@ -1,6 +1,9 @@
 create schema if not exists company;
 use company;
 
+-- restrição atribuida a um domínio
+-- create domain D_num as int check(D_num> 0 and D_num< 21);
+
 create table employee(
 	Fname varchar(15) not null,
     Minit char,
@@ -20,6 +23,7 @@ create table departament(
     Dnumber int not null,
     Mgr_ssn char(9),
     Mgr_start_date date,
+    Dept_create_date date,
     primary key (Pnumber),
     unique (Dname),
     foreign key (Mgr_ssn) references employee(Ssn)
@@ -41,6 +45,7 @@ create table project(
     unique (Pname),
     foreign key (Dnum) references departament(Dnumber)
 );
+
 
 create table work_on(
 	Essn char(9) not null,
