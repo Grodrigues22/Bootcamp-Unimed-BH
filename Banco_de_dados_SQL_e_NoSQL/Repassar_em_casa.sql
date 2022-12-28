@@ -41,9 +41,33 @@ insert into work_on values (123456789, 1, 32.5),
                         (888665555, 20, 0.0);
 
 select * from employee;
+
+-- gerente e seu empregado
 select Ssn, Fname, Dname from employee e, departament d where (e.Ssn = dMgr_ssn);
 
+-- recuperando dependentes dos empregados
 select Fname, Dependent_name, Relationship from employee, dependent where Essn = Ssn;
+
+--
+select Bdate, Address from employee
+        where Fname = 'john' and Minit='B' and Lname='Smith';
+
+-- Recuperando departamento específico
+select * from departament where Dname = 'Research';
+
+select Fname, Lname, Address from employee, departament
+        where Dname='Research' and Dnumber=Dno;
+
+desc work_on;
+select * from project;
+
+select Pname, Essn, Fname, Hours
+from project, work_on, employee
+        where Pnumber = Pno and Essn = Ssn;
+
+
+
+
 
 
 
