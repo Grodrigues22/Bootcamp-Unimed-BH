@@ -1,5 +1,8 @@
-create schema if not exists company;
-use company;
+create schema if not exists company_constraints;
+use company_constraints;
+
+select * from information_schema.table_constraints
+	where constraint_schema = 'company_constraints';
 
 -- restrição atribuida a um domínio
 -- create domain D_num as int check(D_num> 0 and D_num< 21);
@@ -14,9 +17,20 @@ create table employee(
     sex char,
     Salary decimal(10,2),
     Super_ssn char(9),
-    Dno int not null,
-    primary key (Ssn)
+	Dno int not null,
+    constraint chk_salary_employee check (Salary> 2000.0),
+    constraint pk_employee primary key (Ssn)
 );
+
+alter table employee
+	add constraint fk_employee
+    foreign key(Super_ssn) references employee(Ssn)
+    on delete set null
+    on update cascade;
+
+alter table employee modify Dno int not null default 1;
+
+desc employee;
 
 create table departament(
 	Dname varchar(15) not null,
@@ -24,17 +38,34 @@ create table departament(
     Mgr_ssn char(9),
     Mgr_start_date date,
     Dept_create_date date,
-    primary key (Pnumber),
-    unique (Dname),
+    constraint chk_date_dept check (Dept_create_date < Mgr_start_date),
+    constraint pk_dept primary key (Dnumber),
+    constraint unique_name_dept unique (Dname),
     foreign key (Mgr_ssn) references employee(Ssn)
 );
+
+-- 'def', 'company_constraints', 'departament_ibfk_1', 'company_constraints', 'departament', 'FOREIGN KEY', 'YES'
+-- modificar uma constraint: drop e add
+alter table departament drop constraint departament_ibfk_1;
+alter table departament
+	add constraint fk_dept foreign key(Mgr_ssn) references employee(Ssn)
+    on update cascade;
+
+desc departament;
 
 create table dept_locations(
 	Dnumber int not null,
     Dlocation varchar(15) not null,
-    primary key (Dnumber, Dlocation),
-    foreign key (Dnumber) references departament(Dnumber)
+    constraint pk_dept_location primary key (Dnumber, Dlocation),
+    constraint fk_dept_locations foreign key (Dnumber) references departament(Dnumber)
 );
+
+alter table dept_locations drop constraint fk_dept_locations;
+
+alter table dept_locations
+	add constraint fk_dept_locations foreign key (Dnumber) references departament(Dnumber)
+    on delete cascade
+    on update cascade;
 
 create table project(
 	Pname varchar(15) not null,
@@ -42,29 +73,32 @@ create table project(
     Plocation varchar(15),
     Dnum int not null,
     primary key (Pnumber),
-    unique (Pname),
+    constraint unique_project unique (Pname),
     foreign key (Dnum) references departament(Dnumber)
 );
 
 
-create table work_on(
+create table works_on(
 	Essn char(9) not null,
     Pno int not null,
     Hours decimal(3,1) not null,
     primary key (Essn, Pno),
-    foreign key (Essn) references employee(Ssn),
-    foreign key (Pno) references project(Pnumber)
+    constraint fk_works_on foreign key (Essn) references employee(Ssn),
+    constraint fk_works_on_2 foreign key (Pno) references project(Pnumber)
 );
 
 create table dependent(
 	Essn char(9) not null, 
     Dependent_name varchar(15) not null,
-    Sex char, -- F ou M
+    Sex char, 
     Bdate date,
     Relationship varchar(8),
+    Age int not null,
+    constraint chk_age_dependent check (Age < 22),
     primary key (Essn, Dependent_name),
-    foreign key (Essn) references employee(Ssn)
+    constraint fk_dependent foreign key (Essn) references employee(Ssn)
 );
 
+show databases;
 show tables;
 desc employee;

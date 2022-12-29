@@ -23,6 +23,13 @@ insert into dept_locations values (1, 'Houston'),
                                 (5, 'Sugarland'),
                                 (5, 'Houston');
 
+insert into project values ('ProductX', 1, 'Bellaire', 5),
+                        ('ProductY', 2, 'Sugarland', 5),
+                        ('ProductZ', 3, 'Houston', 5),
+                        ('Computerization', 10, 'Stafford', 4),
+                        ('Reorganization', 20, 'Houston', 1),
+                        ('Newbenefits', 30, 'Stafford', 4);
+
 insert into work_on values (123456789, 1, 32.5),
                         (123456789, 2, 7.5),
                         (666884444, 3, 40.0),
@@ -43,7 +50,7 @@ insert into work_on values (123456789, 1, 32.5),
 select * from employee;
 
 -- gerente e seu empregado
-select Ssn, Fname, Dname from employee e, departament d where (e.Ssn = dMgr_ssn);
+select Ssn, Fname, Dname from employee e, departament d where (e.Ssn = d.Mgr_ssn);
 
 -- recuperando dependentes dos empregados
 select Fname, Dependent_name, Relationship from employee, dependent where Essn = Ssn;
