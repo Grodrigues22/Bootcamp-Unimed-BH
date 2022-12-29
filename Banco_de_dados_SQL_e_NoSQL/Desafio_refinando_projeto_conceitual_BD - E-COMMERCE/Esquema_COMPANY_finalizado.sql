@@ -87,16 +87,15 @@ create table works_on(
     constraint fk_works_on_2 foreign key (Pno) references project(Pnumber)
 );
 
+drop table dependent;
 create table dependent(
-	Essn char(9) not null, 
-    Dependent_name varchar(15) not null,
-    Sex char, 
-    Bdate date,
-    Relationship varchar(8),
-    Age int not null,
-    constraint chk_age_dependent check (Age < 22),
-    primary key (Essn, Dependent_name),
-    constraint fk_dependent foreign key (Essn) references employee(Ssn)
+        Essn char(9) not null,
+        Dependent_name varchar(15) not null,
+        Sex char,
+        Bdate date,
+        Relationship varchar(8),
+        primary key (Essn, Dependent_name),
+        constraint fk_dependent foreign key (Essn) references employee(Ssn)
 );
 
 show databases;
