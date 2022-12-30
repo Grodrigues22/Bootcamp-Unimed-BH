@@ -7,7 +7,7 @@
 
 select now () as Timestamp;
 
-select database maniulation;
+drop database maniulation;
 create database if not exists manipulation;
 use manipulation;
 
@@ -24,6 +24,9 @@ alter table bankAccounts add LimiteCredito float
 alter table bankAccounts add email VARCHAR(60);
 alter table bankAccounts drop email;
 
+-- alter table nome_tabela modify column nome_atributo tipo_dados condicao;
+-- alter table nome_tabela add constraint nome_constraint condicoes;
+
 desc bankAccounts;
 
 CREATE TABLE bankClient(
@@ -38,6 +41,10 @@ CREATE TABLE bankClient(
         CONSTRAINT fk_account_client foreign key (ClientAccont) REFERENCES bankAccounts(id_account)
         ON UPDATE CASCADE
 );
+
+insert into bankClient values(1235, 12345678913, 'Fulano', 'rua de lá', 6500.6);
+alter table bankClient add UFF char (2) not null default 'RJ';
+update bankClient set Endereço='MG' where='fulano';
 
 CREATE TABLE bankTransactions(
         id_transcation INT auto_increment PRIMARY KEY,
