@@ -1,4 +1,4 @@
--- inserção dedados no bd company
+-- inserção de dados no bd company
 
 use company_constraints;
 show tables;
@@ -38,6 +38,8 @@ insert into project values ('ProductX', 1, 'Bellaire', 5),
                         ('Computerization', 10, 'Stafford', 4),
                         ('Reorganization', 20, 'Houston', 1),
                         ('Newbenefits', 30, 'Stafford', 4);
+                        
+select * from project;
 
 insert into works_on values (123456789, 1, 32.5),
                         (123456789, 2, 7.5),
@@ -80,5 +82,25 @@ select * from project;
 select Pname, Essn, Fname, Hours
 from project, works_on, employee
         where Pnumber = Pno and Essn = Ssn;
+
+--
+--
+--
+-- Expressões e concatenação de strings
+--
+--
+
+-- recuperando informações dos departamentos presentes em Stafford
+desc dept_locations;
+select * from dept_location;
+select Dname as Department_Name, Mgr_ssn as Manager, Address from departament d, dept_locations l, employee e
+	where d.Dnumber = l.Dnumber and Dlocation='Stafford';
+    
+select Dname as Department_Name, Mgr_ssn as Manager, Address from departament d, dept_locations l, employee e
+	where d.Dnumber = l.Dnumber and Dlocation='Stafford';
+
+
+
+
 
 
