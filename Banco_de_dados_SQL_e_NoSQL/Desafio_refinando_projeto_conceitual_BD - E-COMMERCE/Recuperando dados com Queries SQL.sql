@@ -90,14 +90,35 @@ from project, works_on, employee
 --
 --
 
--- recuperando informações dos departamentos presentes em Stafford
+-- Recuperando informações dos departamentos presentes em Stafford
 desc dept_locations;
 select * from dept_location;
 select Dname as Department_Name, Mgr_ssn as Manager, Address from departament d, dept_locations l, employee e
 	where d.Dnumber = l.Dnumber and Dlocation='Stafford';
+
+-- Recuperando todos os gerentes que trabalham em Stafford
+select Dname as Department_Name, concat(Fname, ' ', Lname) as Manager, Dlocation from departament d, dept_locations l, employee e
+	where d.Dnumber = l.Dnumber and Dlocation='Stafford' and Mgr_ssn = e.Ssn;
+
+desc despartament;
+-- Recuperando todos os gerentes, departamentos e seus nomes
+select Dname as Department_Name, concat(Fname, ' ', Lname) as Manager, Dlocation from departament d, dept_locations l, employee e
+	where d.Dnumber = l.Dnumber and Mgr_ssn = e.Ssn;
+
+desc project;
+select Pnumber, Dnum, Lname, Address, Bdate from departament d, project p, employee e
+	where d.Dnumber = p.Dnum and p.Plocation='Stafford' and Mgr_ssn = e.Ssn;
     
-select Dname as Department_Name, Mgr_ssn as Manager, Address from departament d, dept_locations l, employee e
-	where d.Dnumber = l.Dnumber and Dlocation='Stafford';
+--
+--
+-- Operadores lógicos
+--
+--
+
+select * from employee;
+select Bdate, Address from employee where Fname='John' and Minit='B' and Lname='Smiyh';
+
+
 
 
 

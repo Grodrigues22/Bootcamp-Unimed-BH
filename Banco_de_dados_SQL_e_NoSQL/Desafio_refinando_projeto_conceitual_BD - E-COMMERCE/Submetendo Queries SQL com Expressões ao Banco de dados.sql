@@ -28,3 +28,19 @@ select concat(Fname, ' ', Lname) as Complete_name, Salary, round(Salary*1.1,2) a
 -- definindo alias para legibilidade da consulta 
 select concat(e.Fname,' ', e.Lname) as Emploee_Name, e.Address from employee e, departament d
 	where d.Dname = 'Research' and d.Dnumber = e.Dno;
+
+-- like e between
+select * from project;
+
+select concat(Fname, ' ', Lname) Complete_name, Dname, Address as Departament_Name from employee, departament
+	where (Dno=Dnumber and Address like '%Houston%');
+
+select concat(Fname, ' ', Lname) Complete_name, Address from employee 
+	where (Address like '%Houston%');
+
+select Fname, Lname, Salary from employee where (Salary > 30000 and Salary < 40000);
+select Fname, Lname from employee where (Salary between 20000 and 40000);
+    
+    
+    
+    
