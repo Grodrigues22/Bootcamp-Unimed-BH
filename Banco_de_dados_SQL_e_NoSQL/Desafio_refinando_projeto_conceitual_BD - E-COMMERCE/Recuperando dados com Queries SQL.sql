@@ -118,7 +118,10 @@ select Pnumber, Dnum, Lname, Address, Bdate from departament d, project p, emplo
 select * from employee;
 select Bdate, Address from employee where Fname='John' and Minit='B' and Lname='Smiyh';
 
+select * from departament where Dname = 'Research' or Dname = 'Administration';
 
+select Fname, Lname from employee, departament where Dname = 'Research' and Dnumber=Dno;
+select concat(Fname,Lname) as Complete_name from employee, departament where Dname = 'Research' and Dnumber=Dno;
 
 
 
