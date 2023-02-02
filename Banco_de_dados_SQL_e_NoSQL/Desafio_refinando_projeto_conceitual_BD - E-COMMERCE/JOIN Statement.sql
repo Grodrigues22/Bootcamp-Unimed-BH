@@ -56,7 +56,17 @@ select Dnumber, Dname, concat(Fname,' ', Lname) as Maneger, Salary, round(Salary
     inner join (dependent inner join employee on Ssn = Essn) on Ssn = Mgr_ssn 
     group by Dnumber;
 
- 
 -- departament, project e employee
 
+--
+--
+-- OUTER JOIN
+--
+--
 
+select * from employee;
+select * from dependent;
+
+select * from employee inner join dependent on Ssn = Essn;
+select * from employee left join dependent on Ssn = Essn;
+select * from employee left outer join dependent on Ssn = Essn;
