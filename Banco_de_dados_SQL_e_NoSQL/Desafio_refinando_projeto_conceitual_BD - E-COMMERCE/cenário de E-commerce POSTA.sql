@@ -14,6 +14,8 @@ create table clients(
         constraint unique_cpf_cliente unique (CPF)
 );
 
+alter table clients auto_increment=1;
+
 -- criar tabela produto
 -- size = dimensão do produto
 create table product(
@@ -115,7 +117,17 @@ create table productSupplier(
     constraint fk_product_supplier_product foreign key (idPsProduct) references product(idProduct)
 );
 
-select * from referential_contraints where constrains_
+desc productSupplier;
+
+show tables;
+
+show databases;
+use information_schema;
+
+
+desc referential_constraints;
+
+select * from referential_constraints where constraint_schema = 'ecommerce';
 
 
 
